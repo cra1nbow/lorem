@@ -39,7 +39,7 @@ func downloadRandomPicsum(wg *sync.WaitGroup) {
 	}
 	defer res.Body.Close()
 
-	file, err := os.Create(fmt.Sprintf("./files/%s.jpg", strings.Split(res.Request.URL.Path, "/")[2]))
+	file, err := os.Create(fmt.Sprintf("./lorempicsum/%s.jpg", strings.Split(res.Request.URL.Path, "/")[2]))
 	if err != nil {
 		log.Fatalln("fail create file")
 	}
